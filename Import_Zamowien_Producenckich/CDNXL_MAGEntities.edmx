@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CDNXL_MAGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MAG_EBIZAM_Konfig">
+          <Key>
+            <PropertyRef Name="EZam_ID" />
+          </Key>
+          <Property Name="EZam_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EZam_ProdAkr" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EZam_ProdNazwa" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EZam_Archiwalny" Type="bit" Nullable="false" />
+          <Property Name="EZam_FoldZrd" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="EZam_FoldDoc" Type="varchar" MaxLength="255" />
+          <Property Name="EZam_FoldArch" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="EZam_GenPlikDoc" Type="bit" />
+          <Property Name="EZam_PlikZrdRozsz" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EZam_PlikZrdFormat" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MAG_ZamProdNag">
+          <Key>
+            <PropertyRef Name="Zpn_ID" />
+          </Key>
+          <Property Name="Zpn_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Zpn_nazwa_pliku" Type="varchar" MaxLength="255" />
+          <Property Name="Zpn_Sciezka" Type="varchar" MaxLength="255" />
+          <Property Name="Zpn_DataPliku" Type="datetime" />
+          <Property Name="Zpn_Producent" Type="varchar" MaxLength="255" />
+          <Property Name="Zpn_Status" Type="int" />
+          <Property Name="Zpn_Alert" Type="bit" />
+          <Property Name="Zpn_AlertKnt" Type="bit" />
+          <Property Name="Zpn_KntXL" Type="int" />
+          <Property Name="Zpn_EmailSent" Type="int" />
+          <Property Name="Zpn_ZRODLO_CEL" Type="varchar" MaxLength="50" />
+          <Property Name="Zpn_ID_MAG" Type="varchar" MaxLength="50" />
+          <Property Name="Zpn_NR_ZAM" Type="varchar" MaxLength="50" />
+          <Property Name="Zpn_ID_PRAC" Type="varchar" MaxLength="50" />
+          <Property Name="Zpn_NAZWISKO" Type="varchar" MaxLength="100" />
+          <Property Name="Zpn_IMIE" Type="varchar" MaxLength="100" />
+          <Property Name="Zpn_ID_KLT" Type="varchar" MaxLength="50" />
+          <Property Name="Zpn_NAZWA" Type="varchar" MaxLength="100" />
+          <Property Name="Zpn_MIASTO" Type="varchar" MaxLength="100" />
+          <Property Name="Zpn_ULICA" Type="varchar" MaxLength="100" />
+          <Property Name="Zpn_NR_LOK" Type="varchar" MaxLength="10" />
+          <Property Name="Zpn_NIP" Type="varchar" MaxLength="15" />
+          <Property Name="Zpn_TYP_ZAM" Type="varchar" MaxLength="30" />
+          <Property Name="Zpn_DATA_ZAM" Type="datetime" />
+          <Property Name="Zpn_DATA_DOST" Type="datetime" />
+          <Property Name="Zpn_RABAT_ZAM" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Zpn_UWAGI" Type="varchar" MaxLength="500" />
+          <Property Name="Zpn_WSK_PRM" Type="int" />
+          <Property Name="Zpn_ID_PRM_EBI" Type="int" />
+          <Property Name="Zpn_NAZWA_PRM" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MAG_ZamProdPoz">
+          <Key>
+            <PropertyRef Name="Zpp_ID" />
+          </Key>
+          <Property Name="Zpp_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Zpp_zpnid" Type="int" Nullable="false" />
+          <Property Name="Zpp_AlertTwr" Type="bit" />
+          <Property Name="Zpp_TwrGIDXL" Type="int" />
+          <Property Name="Zpp_XLZanNumer" Type="int" />
+          <Property Name="Zpp_XLZanTyp" Type="int" />
+          <Property Name="Zpp_XLZanLp" Type="int" />
+          <Property Name="Zpp_NR_POZ" Type="int" />
+          <Property Name="Zpp_ID_ASO" Type="varchar" MaxLength="50" />
+          <Property Name="Zpp_EAN" Type="varchar" MaxLength="30" />
+          <Property Name="Zpp_NAZWA" Type="varchar" MaxLength="100" />
+          <Property Name="Zpp_ILOSC_SZT" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_ILOSC" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_ID_JED" Type="varchar" MaxLength="50" />
+          <Property Name="Zpp_ILOSC_NZ" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_DATA_NZ" Type="datetime" />
+          <Property Name="Zpp_CENA_NETTO" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_CENA_NETTO_RABAT" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_RABAT" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Zpp_UKRYJ_RABAT" Type="int" />
+          <Property Name="Zpp_WSK_GRATIS" Type="int" />
+          <Property Name="Zpp_WSK_PRM" Type="int" />
+          <Property Name="Zpp_ID_PRM_EBI" Type="int" />
+          <Property Name="Zpp_ID_PRM_DYS" Type="int" />
+        </EntityType>
+        <EntityContainer Name="CDNXL_MAGModelStoreContainer">
+          <EntitySet Name="MAG_EBIZAM_Konfig" EntityType="Self.MAG_EBIZAM_Konfig" Schema="CDN" store:Type="Tables" />
+          <EntitySet Name="MAG_ZamProdNag" EntityType="Self.MAG_ZamProdNag" Schema="CDN" store:Type="Tables" />
+          <EntitySet Name="MAG_ZamProdPoz" EntityType="Self.MAG_ZamProdPoz" Schema="CDN" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDNXL_MAGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MAG_ZamProdNag">
+          <Key>
+            <PropertyRef Name="Zpn_ID" />
+          </Key>
+          <Property Name="Zpn_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zpn_nazwa_pliku" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_Sciezka" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_Producent" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_Status" Type="Int32" />
+          <Property Name="Zpn_Alert" Type="Boolean" />
+          <Property Name="Zpn_AlertKnt" Type="Boolean" />
+          <Property Name="Zpn_KntXL" Type="Int32" />
+          <Property Name="Zpn_ZRODLO_CEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_ID_MAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_NR_ZAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_ID_PRAC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_NAZWISKO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_ID_KLT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_NAZWA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_MIASTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_ULICA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_NR_LOK" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_NIP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_TYP_ZAM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_DATA_ZAM" Type="DateTime" Precision="3" />
+          <Property Name="Zpn_DATA_DOST" Type="DateTime" Precision="3" />
+          <Property Name="Zpn_RABAT_ZAM" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Zpn_UWAGI" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_WSK_PRM" Type="Int32" />
+          <Property Name="Zpn_ID_PRM_EBI" Type="Int32" />
+          <Property Name="Zpn_NAZWA_PRM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpn_EmailSent" Type="Int32" />
+          <Property Name="Zpn_DataPliku" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MAG_ZamProdPoz">
+          <Key>
+            <PropertyRef Name="Zpp_ID" />
+          </Key>
+          <Property Name="Zpp_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zpp_zpnid" Type="Int32" Nullable="false" />
+          <Property Name="Zpp_AlertTwr" Type="Boolean" />
+          <Property Name="Zpp_TwrGIDXL" Type="Int32" />
+          <Property Name="Zpp_NR_POZ" Type="Int32" />
+          <Property Name="Zpp_ID_ASO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpp_EAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Zpp_NAZWA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Zpp_ILOSC_SZT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_ILOSC" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_ID_JED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zpp_ILOSC_NZ" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_DATA_NZ" Type="DateTime" Precision="3" />
+          <Property Name="Zpp_CENA_NETTO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_CENA_NETTO_RABAT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Zpp_RABAT" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Zpp_UKRYJ_RABAT" Type="Int32" />
+          <Property Name="Zpp_WSK_GRATIS" Type="Int32" />
+          <Property Name="Zpp_WSK_PRM" Type="Int32" />
+          <Property Name="Zpp_ID_PRM_EBI" Type="Int32" />
+          <Property Name="Zpp_ID_PRM_DYS" Type="Int32" />
+          <Property Name="Zpp_XLZanNumer" Type="Int32" />
+          <Property Name="Zpp_XLZanTyp" Type="Int32" />
+          <Property Name="Zpp_XLZanLp" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="CDNXL_MAGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MAG_ZamProdNag" EntityType="Self.MAG_ZamProdNag" />
+          <EntitySet Name="MAG_ZamProdPoz" EntityType="Self.MAG_ZamProdPoz" />
+          <EntitySet Name="MAG_EBIZAM_Konfig" EntityType="CDNXL_MAGModel.MAG_EBIZAM_Konfig" />
+        </EntityContainer>
+        <EntityType Name="MAG_EBIZAM_Konfig">
+          <Key>
+            <PropertyRef Name="EZam_ID" />
+          </Key>
+          <Property Name="EZam_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EZam_ProdAkr" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EZam_ProdNazwa" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EZam_Archiwalny" Type="Boolean" Nullable="false" />
+          <Property Name="EZam_FoldZrd" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EZam_FoldDoc" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EZam_FoldArch" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EZam_GenPlikDoc" Type="Boolean" />
+          <Property Name="EZam_PlikZrdRozsz" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EZam_PlikZrdFormat" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CDNXL_MAGModelStoreContainer" CdmEntityContainer="CDNXL_MAGEntities">
+          <EntitySetMapping Name="MAG_ZamProdNag">
+            <EntityTypeMapping TypeName="CDNXL_MAGModel.MAG_ZamProdNag">
+              <MappingFragment StoreEntitySet="MAG_ZamProdNag">
+                <ScalarProperty Name="Zpn_DataPliku" ColumnName="Zpn_DataPliku" />
+                <ScalarProperty Name="Zpn_EmailSent" ColumnName="Zpn_EmailSent" />
+                <ScalarProperty Name="Zpn_ID" ColumnName="Zpn_ID" />
+                <ScalarProperty Name="Zpn_nazwa_pliku" ColumnName="Zpn_nazwa_pliku" />
+                <ScalarProperty Name="Zpn_Sciezka" ColumnName="Zpn_Sciezka" />
+                <ScalarProperty Name="Zpn_Producent" ColumnName="Zpn_Producent" />
+                <ScalarProperty Name="Zpn_Status" ColumnName="Zpn_Status" />
+                <ScalarProperty Name="Zpn_Alert" ColumnName="Zpn_Alert" />
+                <ScalarProperty Name="Zpn_AlertKnt" ColumnName="Zpn_AlertKnt" />
+                <ScalarProperty Name="Zpn_KntXL" ColumnName="Zpn_KntXL" />
+                <ScalarProperty Name="Zpn_ZRODLO_CEL" ColumnName="Zpn_ZRODLO_CEL" />
+                <ScalarProperty Name="Zpn_ID_MAG" ColumnName="Zpn_ID_MAG" />
+                <ScalarProperty Name="Zpn_NR_ZAM" ColumnName="Zpn_NR_ZAM" />
+                <ScalarProperty Name="Zpn_ID_PRAC" ColumnName="Zpn_ID_PRAC" />
+                <ScalarProperty Name="Zpn_NAZWISKO" ColumnName="Zpn_NAZWISKO" />
+                <ScalarProperty Name="Zpn_IMIE" ColumnName="Zpn_IMIE" />
+                <ScalarProperty Name="Zpn_ID_KLT" ColumnName="Zpn_ID_KLT" />
+                <ScalarProperty Name="Zpn_NAZWA" ColumnName="Zpn_NAZWA" />
+                <ScalarProperty Name="Zpn_MIASTO" ColumnName="Zpn_MIASTO" />
+                <ScalarProperty Name="Zpn_ULICA" ColumnName="Zpn_ULICA" />
+                <ScalarProperty Name="Zpn_NR_LOK" ColumnName="Zpn_NR_LOK" />
+                <ScalarProperty Name="Zpn_NIP" ColumnName="Zpn_NIP" />
+                <ScalarProperty Name="Zpn_TYP_ZAM" ColumnName="Zpn_TYP_ZAM" />
+                <ScalarProperty Name="Zpn_DATA_ZAM" ColumnName="Zpn_DATA_ZAM" />
+                <ScalarProperty Name="Zpn_DATA_DOST" ColumnName="Zpn_DATA_DOST" />
+                <ScalarProperty Name="Zpn_RABAT_ZAM" ColumnName="Zpn_RABAT_ZAM" />
+                <ScalarProperty Name="Zpn_UWAGI" ColumnName="Zpn_UWAGI" />
+                <ScalarProperty Name="Zpn_WSK_PRM" ColumnName="Zpn_WSK_PRM" />
+                <ScalarProperty Name="Zpn_ID_PRM_EBI" ColumnName="Zpn_ID_PRM_EBI" />
+                <ScalarProperty Name="Zpn_NAZWA_PRM" ColumnName="Zpn_NAZWA_PRM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAG_ZamProdPoz">
+            <EntityTypeMapping TypeName="CDNXL_MAGModel.MAG_ZamProdPoz">
+              <MappingFragment StoreEntitySet="MAG_ZamProdPoz">
+                <ScalarProperty Name="Zpp_XLZanLp" ColumnName="Zpp_XLZanLp" />
+                <ScalarProperty Name="Zpp_XLZanTyp" ColumnName="Zpp_XLZanTyp" />
+                <ScalarProperty Name="Zpp_XLZanNumer" ColumnName="Zpp_XLZanNumer" />
+                <ScalarProperty Name="Zpp_ID" ColumnName="Zpp_ID" />
+                <ScalarProperty Name="Zpp_zpnid" ColumnName="Zpp_zpnid" />
+                <ScalarProperty Name="Zpp_AlertTwr" ColumnName="Zpp_AlertTwr" />
+                <ScalarProperty Name="Zpp_TwrGIDXL" ColumnName="Zpp_TwrGIDXL" />
+                <ScalarProperty Name="Zpp_NR_POZ" ColumnName="Zpp_NR_POZ" />
+                <ScalarProperty Name="Zpp_ID_ASO" ColumnName="Zpp_ID_ASO" />
+                <ScalarProperty Name="Zpp_EAN" ColumnName="Zpp_EAN" />
+                <ScalarProperty Name="Zpp_NAZWA" ColumnName="Zpp_NAZWA" />
+                <ScalarProperty Name="Zpp_ILOSC_SZT" ColumnName="Zpp_ILOSC_SZT" />
+                <ScalarProperty Name="Zpp_ILOSC" ColumnName="Zpp_ILOSC" />
+                <ScalarProperty Name="Zpp_ID_JED" ColumnName="Zpp_ID_JED" />
+                <ScalarProperty Name="Zpp_ILOSC_NZ" ColumnName="Zpp_ILOSC_NZ" />
+                <ScalarProperty Name="Zpp_DATA_NZ" ColumnName="Zpp_DATA_NZ" />
+                <ScalarProperty Name="Zpp_CENA_NETTO" ColumnName="Zpp_CENA_NETTO" />
+                <ScalarProperty Name="Zpp_CENA_NETTO_RABAT" ColumnName="Zpp_CENA_NETTO_RABAT" />
+                <ScalarProperty Name="Zpp_RABAT" ColumnName="Zpp_RABAT" />
+                <ScalarProperty Name="Zpp_UKRYJ_RABAT" ColumnName="Zpp_UKRYJ_RABAT" />
+                <ScalarProperty Name="Zpp_WSK_GRATIS" ColumnName="Zpp_WSK_GRATIS" />
+                <ScalarProperty Name="Zpp_WSK_PRM" ColumnName="Zpp_WSK_PRM" />
+                <ScalarProperty Name="Zpp_ID_PRM_EBI" ColumnName="Zpp_ID_PRM_EBI" />
+                <ScalarProperty Name="Zpp_ID_PRM_DYS" ColumnName="Zpp_ID_PRM_DYS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAG_EBIZAM_Konfig">
+            <EntityTypeMapping TypeName="CDNXL_MAGModel.MAG_EBIZAM_Konfig">
+              <MappingFragment StoreEntitySet="MAG_EBIZAM_Konfig">
+                <ScalarProperty Name="EZam_PlikZrdFormat" ColumnName="EZam_PlikZrdFormat" />
+                <ScalarProperty Name="EZam_PlikZrdRozsz" ColumnName="EZam_PlikZrdRozsz" />
+                <ScalarProperty Name="EZam_GenPlikDoc" ColumnName="EZam_GenPlikDoc" />
+                <ScalarProperty Name="EZam_FoldArch" ColumnName="EZam_FoldArch" />
+                <ScalarProperty Name="EZam_FoldDoc" ColumnName="EZam_FoldDoc" />
+                <ScalarProperty Name="EZam_FoldZrd" ColumnName="EZam_FoldZrd" />
+                <ScalarProperty Name="EZam_Archiwalny" ColumnName="EZam_Archiwalny" />
+                <ScalarProperty Name="EZam_ProdNazwa" ColumnName="EZam_ProdNazwa" />
+                <ScalarProperty Name="EZam_ProdAkr" ColumnName="EZam_ProdAkr" />
+                <ScalarProperty Name="EZam_ID" ColumnName="EZam_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
