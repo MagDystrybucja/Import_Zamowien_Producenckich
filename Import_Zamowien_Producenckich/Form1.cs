@@ -22,8 +22,6 @@ namespace Import_Zamowien_Producenckich
                 if (args[1].ToUpper() == "AUTO")
                 {
                     Formaty q = new Formaty(ref this.richEditControl1);
-                    q.Asseco311_ReadFile(@"C:\Users\wojciech.bazydlo\Desktop\aa\f58bbc5c-f428-4a3d-a15c-4dd6baa11647.ZAM", 2);
-                    MessageBox.Show("poszlo");
                 }
                 System.Environment.Exit(0);
             }

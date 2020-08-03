@@ -302,7 +302,7 @@ namespace Import_Zamowien_Producenckich
                     string Temat = "Nowe zamówienie producenckie.";
                     try
                     {
-                        MailMessage mailMessage = new MailMessage("raporty@mag.olsztyn.pl", "bazydlo@magdystrybucja.pl"/*r["prc_email"].ToString()*/);
+                        MailMessage mailMessage = new MailMessage("raporty@mag.olsztyn.pl", r["prc_email"].ToString());
                         mailMessage.Subject = Temat;
 
                         RichEditMailMessageExporter exporter = new RichEditMailMessageExporter(rec1, mailMessage);
