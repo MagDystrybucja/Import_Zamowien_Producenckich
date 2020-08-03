@@ -14,6 +14,7 @@ namespace Import_Zamowien_Producenckich
 {
     public partial class Form1 : Form
     {
+        public bool auto = false;
         public Form1()
         {
             string[] args = Environment.GetCommandLineArgs();
@@ -21,9 +22,8 @@ namespace Import_Zamowien_Producenckich
             {
                 if (args[1].ToUpper() == "AUTO")
                 {
-                    Formaty q = new Formaty(ref this.richEditControl1);
+                    auto = true;
                 }
-                System.Environment.Exit(0);
             }
             else
             {
@@ -34,16 +34,24 @@ namespace Import_Zamowien_Producenckich
         private void button1_Click(object sender, EventArgs e)
         {
             Formaty q = new Formaty(ref this.richEditControl1);
-           // q.Importtest();
-            /*
-            List<string> aa= q.Synergizer_ExportFileLinesAsseco311(q.Asseco311_ReadFile(@"C:\Users\wojciech.bazydlo\Desktop\aa\f58bbc5c-f428-4a3d-a15c-4dd6baa11647.ZAM", 1), q.Asseco311_ReadFile(@"C:\Users\wojciech.bazydlo\Desktop\aa\f58bbc5c-f428-4a3d-a15c-4dd6baa11647.ZAM", 2));
-            q.SaveFile(aa, @"C:\Users\wojciech.bazydlo\Desktop\aa\bb\f58bbc5c-f428-4a3d-a15c-4dd6baa11647.ZAM");
-            List<string> aba = q.ListFolderFiles(@"C:\Users\wojciech.bazydlo\Desktop\aa\", "*.ZAM");*/
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            MessageBox.Show(auto.ToString());
+            if (auto)
+            {
+                MessageBox.Show("QWE3");
+                Formaty q = new Formaty(ref this.richEditControl1);
+                MessageBox.Show("QWE");
+                this.Close();
+                MessageBox.Show("QWE2");
+            }
+        }
     }
 }
