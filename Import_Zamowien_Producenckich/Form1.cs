@@ -23,6 +23,7 @@ namespace Import_Zamowien_Producenckich
                 if (args[1].ToUpper() == "AUTO")
                 {
                     auto = true;
+                    InitializeComponent();
                 }
             }
             else
@@ -43,14 +44,10 @@ namespace Import_Zamowien_Producenckich
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            MessageBox.Show(auto.ToString());
             if (auto)
             {
-                MessageBox.Show("QWE3");
                 Formaty q = new Formaty(ref this.richEditControl1);
-                MessageBox.Show("QWE");
                 this.Close();
-                MessageBox.Show("QWE2");
             }
         }
     }
