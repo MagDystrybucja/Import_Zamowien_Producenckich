@@ -37,17 +37,13 @@ namespace Import_Zamowien_Producenckich
             Formaty q = new Formaty(ref this.richEditControl1);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
             if (auto)
             {
                 Formaty q = new Formaty(ref this.richEditControl1);
-                this.Close();
+                System.Environment.Exit(0);
             }
         }
     }

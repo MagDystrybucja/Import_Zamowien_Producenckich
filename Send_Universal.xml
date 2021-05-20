@@ -1,0 +1,5 @@
+<root><schemaMag><program Title="Eksport danych z firmy MAG Dystrybucja" Type="1" Automat="0"/>
+<send active="True" ftp="True" smtp="False" archivefiles="False"><ftp deletefileaftersend="False" host="ftpgts.absysco.pl"
+ user="mag" password="GhT5_99" folder="/" port="21" ssl="True" passive="True" compress="False" type="0" 
+files=""/><smtp folder=""/></send><source ConnectionString="MAG-SQL" user="Zywiec_Nakladka" password="Zywiec!@#"
+ mssql="MAG-SQL" mssqlu="Zywiec_Nakladka" mssqlp="Zywiec!@#" mssqld="CDNXL_mag" path="" getdata="True" saveto="2" type="1"><object TableName="cdn.MAG_ZYWIEC_PRICLIST" TableNew="ZYWIEC_PRICLIST.db" SQL="select * from" CanExecute="False"/><object TableName="cdn.MAG_ZYWIEC_CUSTOMER" TableNew="ZYWIEC_CUSTOMER.db" SQL="select * from" CanExecute="False"/><object TableName="cdn.MAG_ZYWIEC_DOCUHEAD" TableNew="ZYWIEC_DOCUHEAD.db" SQL="select * from" CanExecute="False"/><object TableName="cdn.MAG_ZYWIEC_DOCUPOSI" TableNew="ZYWIEC_DOCUPOSI.db" SQL="select * from" CanExecute="False"/></source><module Run="False" FileName="" Params=""/><ftp/><bde/></schemaMag></root>
